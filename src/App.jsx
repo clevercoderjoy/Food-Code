@@ -1,8 +1,10 @@
+import HeaderComponent from "./components/headerComponent/HeaderComponent"
+
 function App() {
 
   return (
     <>
-      <h1>Hello clevercoderjoy!</h1>
+      <HeaderComponent />
     </>
   )
 }
