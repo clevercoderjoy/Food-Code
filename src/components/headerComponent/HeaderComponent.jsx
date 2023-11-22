@@ -3,7 +3,7 @@ import "./headerComponent.css";
 const HeaderComponent = () => {
   return (
     <>
-      <div className="headerContainer">
+      <header className="headerContainer">
         <div className="logo">FoOd CoDe</div>
         <div className="navbar">
           <nav>
@@ -15,7 +15,7 @@ const HeaderComponent = () => {
             </ul>
           </nav>
         </div>
-      </div>
+      </header>
     </>
   )
 }
