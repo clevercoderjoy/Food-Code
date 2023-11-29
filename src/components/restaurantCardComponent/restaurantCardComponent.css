@@ -1,0 +1,58 @@
+.restaurantContainer {
+  max-width: 500px;
+  max-height: auto;
+  margin: 1rem auto;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid black;
+}
+
+.restaurantImgContainer {
+  margin: auto;
+  text-align: center;
+}
+
+.restaurantImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  background-color: black;
+}
+
+.restaurantDetailsContainer {
+  margin: 0.5rem;
+  display: flex;
+  border-top: 2px solid black;
+}
+
+.detailsLeft {
+}
+
+.detailsRight {
+  /* display: flex;
+  flex-direction: column; */
+}
+/* .restaurantName {
+  margin: 0.5rem 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.restaurantCuisines {
+  margin: 0 0.5rem;
+  font-size: 14px;
+}
+.restaurantCuisines span {
+  margin-right: 0.5rem;
+}
+
+.restaurantFoodDetails {
+  margin: 0.5rem;
+}
+
+.restaurantFoodDetails .ratings {
+  background-color: #57e32c;
+  font-weight: bold;
+  color: white;
+  padding: 0.2rem 0.25rem;
+} */
