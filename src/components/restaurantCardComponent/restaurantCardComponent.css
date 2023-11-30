@@ -1,9 +1,13 @@
 .restaurantContainer {
-  max-width: 500px;
+  width: 250px;
   max-height: auto;
-  margin: 1rem auto;
+  margin: 1rem;
   border-radius: 10px 10px 0 0;
-  border: 1px solid black;
+  border: 2px solid black;
+  transition: all 0.1s ease-in-out;
+}
+.restaurantContainer:hover {
+  transform: scale(1.1);
 }
 
 .restaurantImgContainer {
@@ -16,43 +20,70 @@
   height: 100%;
   border-radius: 10px 10px 0 0;
   object-fit: cover;
-  background-color: black;
 }
 
 .restaurantDetailsContainer {
   margin: 0.5rem;
   display: flex;
+  flex-direction: column;
   border-top: 2px solid black;
 }
 
-.detailsLeft {
-}
-
-.detailsRight {
-  /* display: flex;
-  flex-direction: column; */
-}
-/* .restaurantName {
-  margin: 0.5rem 0;
-  font-size: 14px;
+.restaurantName {
+  font-size: 20px;
   font-weight: bold;
 }
 
 .restaurantCuisines {
-  margin: 0 0.5rem;
-  font-size: 14px;
+  margin: 0.5rem 0;
 }
+
 .restaurantCuisines span {
   margin-right: 0.5rem;
 }
 
 .restaurantFoodDetails {
-  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin: 0.3rem 0;
+  word-spacing: 0.3rem;
 }
 
-.restaurantFoodDetails .ratings {
-  background-color: #57e32c;
+.restaurantFoodDetails .separator {
   font-weight: bold;
+}
+
+.offers {
+  margin: 0.5rem 0;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view {
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+  font-size: 14px;
+  border-radius: 3px;
+  margin: 0.5rem auto;
+  letter-spacing: 0.1rem;
+  transition: all 0.1s ease-in-out;
+}
+.view:hover {
+  text-transform: uppercase;
+  background-color: black;
   color: white;
-  padding: 0.2rem 0.25rem;
-} */
+}
+
+.view a {
+  text-decoration: none;
+  color: inherit;
+}

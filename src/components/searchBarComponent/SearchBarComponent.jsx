@@ -1,5 +1,4 @@
 import InputComponent from "../inputComponent/InputComponent";
-import ButtonComponent from './../buttonComponent/ButtonComponent';
 
 import "./searchBarComponent.css";
 
@@ -8,7 +7,7 @@ const SearchBarComponent = () => {
     <>
       <div className="searchBarContainer">
         <InputComponent placeholderText="Search..." />
-        <ButtonComponent buttonText="🔍" />
+        <button className="searchButton">🔍</button>
       </div>
     </>
   )
