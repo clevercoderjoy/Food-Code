@@ -1,0 +1,4 @@
+.restaurantCards {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,12 +1,10 @@
-import FooterComponent from "./components/footerComponent/FooterComponent"
-import HeaderComponent from "./components/headerComponent/HeaderComponent"
+import FoodCodeApp from "./components/foodCodeApp/FoodCodeApp"
 
 function App() {
 
   return (
     <>
-      <HeaderComponent />
-      <FooterComponent />
+      <FoodCodeApp />
     </>
   )
 }
