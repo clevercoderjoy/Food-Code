@@ -335,6 +335,7 @@ export const resObj = [
       badgesV2: {
         entityBadges: { imageBased: {}, textBased: {}, textExtendedBadges: {} },
       },
+      aggregatedDiscountInfoV3: { header: "50% OFF", subHeader: "UPTO ₹100" },
       loyaltyDiscoverPresentationInfo: {
         logoCtx: { logo: "Swiggy%20One%20Lite/One_lite_vertical_logo.png" },
         freedelMessage: "FREE DELIVERY",
