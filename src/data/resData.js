@@ -76,7 +76,7 @@ export const resObj = [
       locality: "Koramangala",
       areaName: "Koramangala",
       costForTwo: "₹350 for two",
-      cuisines: ["Burgers", "American"],
+      cuisines: ["Burgers", "American", "Fast Food"],
       avgRating: 4.1,
       feeDetails: {
         restaurantId: "5934",

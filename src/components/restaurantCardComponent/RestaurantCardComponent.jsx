@@ -2,24 +2,23 @@ import "./restaurantCardComponent.css";
 
 const RestaurantCardComponent = ({ resData }) => {
   const dots = "...";
+  const imgPrefix = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
   const cuisinesWithDots = () => {
     let cuisines = "";
-    for (let i = 0; i < 2; i++)
+    for (let i = 0; i < 3; i++)
     {
       cuisines += " " + resData.info.cuisines[i];
     }
     return cuisines + dots;
   }
-  const cuisines = resData.info.cuisines.length < 5 ? resData.info.cuisines.map((cuisine) => `${cuisine} `) : (
+  const cuisines = resData.info.cuisines.length < 2 ? resData.info.cuisines.map((cuisine) => `${cuisine} `) : (
     cuisinesWithDots()
   )
   return (
     <>
       <div className="restaurantContainer">
         <div className="restaurantImgContainer">
-          <span className="restaurantImg">{
-            resData.info.name.length > 15 ? (resData.info.name.substring(0, 12) + dots) : (resData.info.name)
-          }</span>
+          <img src={imgPrefix + resData.info.cloudinaryImageId} alt="food-image" className="restaurantImg" />
         </div>
         <div className="restaurantDetailsContainer">
           <div className="restaurantCuisines">
