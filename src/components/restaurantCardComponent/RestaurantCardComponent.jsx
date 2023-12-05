@@ -4,7 +4,7 @@ const RestaurantCardComponent = ({ resData }) => {
   const dots = "...";
   const cuisinesWithDots = () => {
     let cuisines = "";
-    for (let i = 0; i < 4; i++)
+    for (let i = 0; i < 2; i++)
     {
       cuisines += " " + resData.info.cuisines[i];
     }

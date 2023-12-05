@@ -1,11 +1,11 @@
 .restaurantContainer {
-  width: 250px;
-  height: auto;
-  max-height: auto;
-  margin: 1rem;
+  width: 230px;
+  height: 230px;
+  margin: 1rem 0.5rem 1.5rem 0.5rem;
   border-radius: 10px;
   border: 2px solid black;
   transition: all 0.1s ease-in-out;
+  position: relative;
 }
 .restaurantContainer:hover {
   transform: scale(1.1);
@@ -18,18 +18,15 @@
 }
 
 .restaurantImg {
-  text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
-  display: inline-block;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .restaurantDetailsContainer {
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   border-top: 2px solid black;
 }
 
@@ -40,10 +37,6 @@
 
 .restaurantCuisines {
   margin: 0.5rem 0;
-}
-
-.restaurantCuisines span {
-  margin-right: 0.5rem;
 }
 
 .restaurantFoodDetails {
@@ -77,9 +70,11 @@
   padding: 0.5rem;
   font-size: 14px;
   border-radius: 3px;
-  margin: 0.5rem auto;
   letter-spacing: 0.1rem;
   transition: all 0.1s ease-in-out;
+  position: absolute;
+  bottom: 5px;
+  left: 50px;
 }
 .view:hover {
   text-transform: uppercase;
