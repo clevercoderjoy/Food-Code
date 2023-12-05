@@ -1,29 +1,39 @@
 import "./restaurantCardComponent.css";
 
-const RestaurantCardComponent = () => {
+const RestaurantCardComponent = ({ resData }) => {
+  const dots = "...";
+  const cuisinesWithDots = () => {
+    let cuisines = "";
+    for (let i = 0; i < 4; i++)
+    {
+      cuisines += " " + resData.info.cuisines[i];
+    }
+    return cuisines + dots;
+  }
+  const cuisines = resData.info.cuisines.length < 5 ? resData.info.cuisines.map((cuisine) => `${cuisine} `) : (
+    cuisinesWithDots()
+  )
   return (
     <>
       <div className="restaurantContainer">
         <div className="restaurantImgContainer">
-          <img src="https://meghanafoods.co.in/assets/img/logo.png" alt="restaurantImg" className="restaurantImg" />
+          <span className="restaurantImg">{
+            resData.info.name.length > 15 ? (resData.info.name.substring(0, 12) + dots) : (resData.info.name)
+          }</span>
         </div>
         <div className="restaurantDetailsContainer">
-          <div className="restaurantName">
-            Meghana Foods
-          </div>
           <div className="restaurantCuisines">
-            <span>cuisine 1</span>
-            <span>cuisine 2</span>
+            <span>{cuisines}</span>
           </div>
           <div className="restaurantFoodDetails">
-            <span className="ratings">4.3⭐</span>
+            <span className="ratings">{resData.info.avgRating}⭐</span>
             <span className="separator">|</span>
-            <span className="time">27 mins</span>
+            <span className="time">{resData.info.sla.deliveryTime} mins</span>
             <span className="separator">|</span>
-            <span className="avgPrice">400 for Two</span>
+            <span className="avgPrice">{resData.info.costForTwo}</span>
           </div>
           <div className="offers">
-            40% off | Use SPECIALS
+            {`${resData.info.aggregatedDiscountInfoV3?.header} | ${resData.info.aggregatedDiscountInfoV3?.subHeader}`}
           </div>
         </div>
         <button className="view">
