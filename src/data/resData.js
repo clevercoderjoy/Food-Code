@@ -76,7 +76,7 @@ export const resObj = [
       locality: "Koramangala",
       areaName: "Koramangala",
       costForTwo: "₹350 for two",
-      cuisines: ["Burgers", "American"],
+      cuisines: ["Burgers", "American", "Fast Food"],
       avgRating: 4.1,
       feeDetails: {
         restaurantId: "5934",
@@ -335,6 +335,7 @@ export const resObj = [
       badgesV2: {
         entityBadges: { imageBased: {}, textBased: {}, textExtendedBadges: {} },
       },
+      aggregatedDiscountInfoV3: { header: "50% OFF", subHeader: "UPTO ₹100" },
       loyaltyDiscoverPresentationInfo: {
         logoCtx: { logo: "Swiggy%20One%20Lite/One_lite_vertical_logo.png" },
         freedelMessage: "FREE DELIVERY",
