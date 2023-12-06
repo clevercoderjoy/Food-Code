@@ -21,6 +21,9 @@ const RestaurantCardComponent = ({ resData }) => {
           <img src={imgPrefix + resData.info.cloudinaryImageId} alt="food-image" className="restaurantImg" />
         </div>
         <div className="restaurantDetailsContainer">
+          <div className="restaurantName">
+            {resData.info.name.length > 10 ? (`${resData.info.name.substring(0, 10)}${dots}`) : (resData.info.name)}
+          </div>
           <div className="restaurantCuisines">
             <span>{cuisines}</span>
           </div>
