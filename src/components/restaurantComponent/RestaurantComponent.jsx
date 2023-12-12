@@ -9,7 +9,7 @@ const RestaurantComponent = () => {
     <>
       <div className="restaurantCards">
         {
-          resObj.map((restaurant, index) => <RestaurantCardComponent key={index} resData={restaurant} />)
+          resObj.map((restaurant) => <RestaurantCardComponent key={restaurant.info.id} resData={restaurant} />)
         }
       </div>
     </>

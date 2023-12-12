@@ -1,41 +1,43 @@
 import "./restaurantCardComponent.css";
 
 const RestaurantCardComponent = ({ resData }) => {
+
+  const { cloudinaryImageId, cuisines, name, avgRating, sla: { deliveryTime }, costForTwo, aggregatedDiscountInfoV3: { header, subHeader }, } = resData.info;
   const dots = "...";
   const imgPrefix = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
   const cuisinesWithDots = () => {
-    let cuisines = "";
+    let cuisine = "";
     for (let i = 0; i < 3; i++)
     {
-      cuisines += " " + resData.info.cuisines[i];
+      cuisine += " " + cuisines[i];
     }
-    return cuisines + dots;
+    return cuisine + dots;
   }
-  const cuisines = resData.info.cuisines.length < 2 ? resData.info.cuisines.map((cuisine) => `${cuisine} `) : (
+  const cuisine = cuisines.length < 2 ? cuisines.map((cuisine) => `${cuisine} `) : (
     cuisinesWithDots()
   )
   return (
     <>
       <div className="restaurantContainer">
         <div className="restaurantImgContainer">
-          <img src={imgPrefix + resData.info.cloudinaryImageId} alt="food-image" className="restaurantImg" />
+          <img src={imgPrefix + cloudinaryImageId} alt="food-image" className="restaurantImg" />
         </div>
         <div className="restaurantDetailsContainer">
           <div className="restaurantName">
-            {resData.info.name.length > 10 ? (`${resData.info.name.substring(0, 10)}${dots}`) : (resData.info.name)}
+            {name.length > 10 ? (`${name.substring(0, 10)}${dots}`) : (name)}
           </div>
           <div className="restaurantCuisines">
-            <span>{cuisines}</span>
+            <span>{cuisine}</span>
           </div>
           <div className="restaurantFoodDetails">
-            <span className="ratings">{resData.info.avgRating}⭐</span>
+            <span className="ratings">{avgRating}⭐</span>
             <span className="separator">|</span>
-            <span className="time">{resData.info.sla.deliveryTime} mins</span>
+            <span className="time">{deliveryTime} mins</span>
             <span className="separator">|</span>
-            <span className="avgPrice">{resData.info.costForTwo}</span>
+            <span className="avgPrice">{costForTwo}</span>
           </div>
           <div className="offers">
-            {`${resData.info.aggregatedDiscountInfoV3?.header} | ${resData.info.aggregatedDiscountInfoV3?.subHeader}`}
+            {`${header} | ${subHeader}`}
           </div>
         </div>
         <button className="view">
