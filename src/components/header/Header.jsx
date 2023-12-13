@@ -1,6 +1,6 @@
-import "./headerComponent.css";
+import "./header.css";
 
-const HeaderComponent = () => {
+const Header = () => {
   return (
     <>
       <header className="headerContainer">
@@ -20,4 +20,4 @@ const HeaderComponent = () => {
   )
 }
 
-export default HeaderComponent;
+export default Header;

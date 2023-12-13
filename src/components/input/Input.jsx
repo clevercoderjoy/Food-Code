@@ -1,6 +1,6 @@
-import "./inputComponent.css";
+import "./input.css";
 
-const InputComponent = ({ placeholderText }) => {
+const Input = ({ placeholderText }) => {
   return (
     <>
       <input className="inputField" type="text" placeholder={placeholderText} />
@@ -8,4 +8,4 @@ const InputComponent = ({ placeholderText }) => {
   )
 }
 
-export default InputComponent;
+export default Input;

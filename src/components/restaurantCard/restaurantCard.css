@@ -77,7 +77,6 @@
   position: absolute;
   bottom: 5px;
   left: 50px;
-  /* margin: 0.5rem auto; */
 }
 .view:hover {
   text-transform: uppercase;

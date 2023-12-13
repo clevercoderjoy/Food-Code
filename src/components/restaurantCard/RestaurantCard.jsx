@@ -1,10 +1,10 @@
-import "./restaurantCardComponent.css";
+import { CDN_URL } from "../../utils/constants";
+import "./restaurantCard.css";
 
-const RestaurantCardComponent = ({ resData }) => {
+const RestaurantCard = ({ resData }) => {
 
   const { cloudinaryImageId, cuisines, name, avgRating, sla: { deliveryTime }, costForTwo, aggregatedDiscountInfoV3: { header, subHeader }, } = resData.info;
   const dots = "...";
-  const imgPrefix = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
   const cuisinesWithDots = () => {
     let cuisine = "";
     for (let i = 0; i < 3; i++)
@@ -20,7 +20,7 @@ const RestaurantCardComponent = ({ resData }) => {
     <>
       <div className="restaurantContainer">
         <div className="restaurantImgContainer">
-          <img src={imgPrefix + cloudinaryImageId} alt="food-image" className="restaurantImg" />
+          <img src={CDN_URL + cloudinaryImageId} alt="food-image" className="restaurantImg" />
         </div>
         <div className="restaurantDetailsContainer">
           <div className="restaurantName">
@@ -50,4 +50,4 @@ const RestaurantCardComponent = ({ resData }) => {
   );
 }
 
-export default RestaurantCardComponent;
+export default RestaurantCard;
