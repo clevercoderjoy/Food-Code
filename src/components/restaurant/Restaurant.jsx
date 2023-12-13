@@ -3,7 +3,6 @@ import "./restaurant.css";
 
 
 const Restaurant = ({ restaurants }) => {
-  console.log(restaurants)
   return (
     <>
       <div className="restaurantCards">
