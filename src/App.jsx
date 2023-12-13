@@ -1,10 +1,10 @@
-import FoodCodeComponent from "./components/foodCodeApp/FoodCodeComponent"
+import FoodCode from "./components/foodCodeApp/FoodCode"
 
 function App() {
 
   return (
     <>
-      <FoodCodeComponent />
+      <FoodCode />
     </>
   )
 }
