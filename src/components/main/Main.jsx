@@ -38,7 +38,7 @@ const Main = () => {
   }
 
   const filterRestaurants = (star) => {
-    const filteredItems = resData?.filter((res) => res?.info?.avgRating > star && res?.info?.avgRating < star + 1);
+    const filteredItems = resData?.filter((res) => res?.info?.avgRating >= star && res?.info?.avgRating < star + 1);
     star === 0 ? setFilteredRestaurants(resData) : setFilteredRestaurants(filteredItems);
   }
 
