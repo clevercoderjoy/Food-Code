@@ -1,13 +1,13 @@
 import { CDN_URL } from "../../utils/constants";
 import "./restaurantCard.css";
 
-const RestaurantCard = ({ resData }) => {
+const RestaurantCard = ({ restaurant }) => {
 
-  const { cloudinaryImageId, cuisines, name, avgRating, sla: { deliveryTime }, costForTwo, aggregatedDiscountInfoV3: { header, subHeader }, } = resData.info;
+  const { cloudinaryImageId, cuisines, name, avgRating, sla: { deliveryTime }, costForTwo, aggregatedDiscountInfoV3 } = restaurant.info;
   const dots = "...";
   const cuisinesWithDots = () => {
     let cuisine = "";
-    for (let i = 0; i < 3; i++)
+    for (let i = 0; i < 2; i++)
     {
       cuisine += " " + cuisines[i];
     }
@@ -26,9 +26,7 @@ const RestaurantCard = ({ resData }) => {
           <div className="restaurantName">
             {name.length > 10 ? (`${name.substring(0, 10)}${dots}`) : (name)}
           </div>
-          <div className="restaurantCuisines">
-            <span>{cuisine}</span>
-          </div>
+
           <div className="restaurantFoodDetails">
             <span className="ratings">{avgRating}⭐</span>
             <span className="separator">|</span>
@@ -36,8 +34,15 @@ const RestaurantCard = ({ resData }) => {
             <span className="separator">|</span>
             <span className="avgPrice">{costForTwo}</span>
           </div>
+          <div className="restaurantCuisines">
+            <span>{cuisine}</span>
+          </div>
           <div className="offers">
-            {`${header} | ${subHeader}`}
+            {
+              (aggregatedDiscountInfoV3?.header === undefined && aggregatedDiscountInfoV3?.subHeader === undefined)
+                ? "something"
+                : `${aggregatedDiscountInfoV3?.header !== undefined ? aggregatedDiscountInfoV3?.header : ""} ${aggregatedDiscountInfoV3?.subHeader !== undefined ? aggregatedDiscountInfoV3?.subHeader : ""}`
+            }
           </div>
         </div>
         <button className="view">
