@@ -1,0 +1,51 @@
+.shimmerRestaurantContainer {
+  border: 5px solid #f6f6f6;
+  width: 230px;
+  height: 375px;
+  margin: 1rem 0.5rem 1.5rem 0.5rem;
+  border-radius: 10px;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+}
+.shimmerRestaurantContainer:hover {
+  transform: scale(1);
+}
+
+.shimmerRestaurantImgContainer {
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.shimmerRestaurantImg {
+  width: 210px;
+  object-fit: cover;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.shimmerRestaurantName {
+  margin-top: -0.7rem;
+  padding: 0.1rem;
+}
+
+.shimmerRestaurantDetailsContainer {
+  border-top: none;
+  padding: 0 0.5rem;
+}
+
+.shimmerView {
+  display: block;
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 5px;
+  left: 45px;
+}
+.shimmer-button {
+  margin-bottom: 0 !important;
+}
+
+.shimmerRestaurantCuisines {
+  margin-top: -0.5rem;
+}
