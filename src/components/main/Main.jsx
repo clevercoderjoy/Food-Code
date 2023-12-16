@@ -10,11 +10,18 @@ const Main = () => {
   const [resData, setResData] = useState();
 
   const fetchResData = async () => {
-    const data = await fetch(res_url);
-    const jsonData = await data.json();
-    const apiResData = await jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    setResData(apiResData);
-    setFilteredRestaurants(apiResData);
+    try
+    {
+      const data = await fetch(res_url);
+      const jsonData = await data.json();
+      const apiResData = await jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      setResData(apiResData);
+      setFilteredRestaurants(apiResData);
+    }
+    catch (e)
+    {
+      console.log(e);
+    }
   };
 
   useEffect(() => { fetchResData() }, [])
