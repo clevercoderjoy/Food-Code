@@ -20,7 +20,7 @@ const Main = () => {
     }
     catch (e)
     {
-      console.log(e);
+      console.log("Error: ", e);
     }
   };
 
