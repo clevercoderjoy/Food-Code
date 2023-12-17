@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from 'react';
 import { res_url } from '../../utils/constants';
 import FilterButtons from '../filterButtons/FilterButtons';
@@ -5,17 +6,16 @@ import Restaurant from '../restaurant/Restaurant';
 import SearchBar from '../searchBar/SearchBar';
 
 const Main = () => {
-
   const [filteredRestaurants, setFilteredRestaurants] = useState();
   const [resData, setResData] = useState();
+
 
   const fetchResData = async () => {
     try
     {
-      const data = await fetch(res_url);
-      const jsonData = await data.json();
-      console.log("jsonData", jsonData);
-      const apiResData = await jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      const data = axios.get(res_url);
+      const apiResData = (await data)?.data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      console.log(apiResData)
       setResData(apiResData);
       setFilteredRestaurants(apiResData);
     }
