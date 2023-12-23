@@ -9,13 +9,45 @@ const Main = () => {
   const [resData, setResData] = useState();
 
 
+  function findRestaurants(obj, count = { occurrences: 0 }) {
+    // Check if the input is an object
+    if (typeof obj !== 'object' || obj === null)
+    {
+      return null; // Return null if the input is not an object
+    }
+    // Iterate through the object's keys
+    for (const key in obj)
+    {
+      if (key === 'restaurants')
+      {
+        count.occurrences++; // Increment the count if the key is 'restaurants'
+
+        if (count.occurrences === 2)
+        {
+          return obj[key]; // Return the value of 'restaurants' if it's the second occurrence
+        }
+      }
+      // Recursively search nested objects
+      if (typeof obj[key] === 'object' && obj[key] !== null)
+      {
+        const result = findRestaurants(obj[key], count);
+        if (result !== null)
+        {
+          return result; // Return the value if found in nested objects
+        }
+      }
+    }
+    return null; // Return null if the key 'restaurants' is not found for the second time
+  }
+
   const fetchResData = async () => {
     try
     {
       const response = await fetch(res_url);
       const data = await response.json()
-      console.log(data.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      const apiResData = (await data)?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      const restaurants = await findRestaurants(data.data);
+      console.log("restaurants", restaurants)
+      const apiResData = restaurants;
       setResData(apiResData);
       setFilteredRestaurants(apiResData);
     }
