@@ -40,7 +40,7 @@ const RestaurantCard = ({ restaurant }) => {
           <div className="offers">
             {
               (aggregatedDiscountInfoV3?.header === undefined && aggregatedDiscountInfoV3?.subHeader === undefined)
-                ? "something"
+                ? "Offers Coming Soon"
                 : `${aggregatedDiscountInfoV3?.header !== undefined ? aggregatedDiscountInfoV3?.header : ""} ${aggregatedDiscountInfoV3?.subHeader !== undefined ? aggregatedDiscountInfoV3?.subHeader : ""}`
             }
           </div>
