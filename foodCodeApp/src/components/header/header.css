@@ -26,7 +26,39 @@
 }
 .navbar ul li:hover {
   font-weight: bold;
-  transform: scale(1.2);
+  transform: scale(1.1);
   border-radius: 5px;
   padding: 0.5rem;
+}
+
+.logoutButton {
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  background: tomato;
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.1rem;
+  transition: all 0.1s ease-in-out;
+  text-transform: uppercase;
+}
+
+.loginButton {
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  background: #0f9d58;
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.1rem;
+  transition: all 0.1s ease-in-out;
+  text-transform: uppercase;
 }
