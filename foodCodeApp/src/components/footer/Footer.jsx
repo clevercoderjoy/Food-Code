@@ -19,8 +19,8 @@ const Footer = () => {
             <ul>
               <li>Home</li>
               <li>About</li>
-              <li>You</li>
               <li>Cart</li>
+              <li>You</li>
             </ul>
           </nav>
         </div>
