@@ -22,7 +22,7 @@ const Main = () => {
       {
         count.occurrences++; // Increment the count if the key is 'restaurants'
 
-        if (count.occurrences === 2)
+        if (count.occurrences === 1)
         {
           return obj[key]; // Return the value of 'restaurants' if it's the second occurrence
         }
@@ -45,6 +45,7 @@ const Main = () => {
     {
       const response = await fetch(res_url);
       const data = await response.json()
+      console.log(data.data)
       const restaurants = await findRestaurants(data.data);
       console.log("restaurants", restaurants)
       const apiResData = restaurants;
