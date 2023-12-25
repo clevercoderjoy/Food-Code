@@ -8,49 +8,15 @@ const Main = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState();
   const [resData, setResData] = useState();
 
-
-  function findRestaurants(obj, count = { occurrences: 0 }) {
-    // Check if the input is an object
-    if (typeof obj !== 'object' || obj === null)
-    {
-      return null; // Return null if the input is not an object
-    }
-    // Iterate through the object's keys
-    for (const key in obj)
-    {
-      if (key === 'restaurants')
-      {
-        count.occurrences++; // Increment the count if the key is 'restaurants'
-
-        if (count.occurrences === 1)
-        {
-          return obj[key]; // Return the value of 'restaurants' if it's the second occurrence
-        }
-      }
-      // Recursively search nested objects
-      if (typeof obj[key] === 'object' && obj[key] !== null)
-      {
-        const result = findRestaurants(obj[key], count);
-        if (result !== null)
-        {
-          return result; // Return the value if found in nested objects
-        }
-      }
-    }
-    return null; // Return null if the key 'restaurants' is not found for the second time
-  }
-
   const fetchResData = async () => {
     try
     {
       const response = await fetch(res_url);
       const data = await response.json()
-      console.log(data.data)
-      const restaurants = await findRestaurants(data.data);
-      console.log("restaurants", restaurants)
-      const apiResData = restaurants;
+      const apiResData = data?.data?.cards[2]?.card.card?.gridElements?.infoWithStyle?.restaurants;
       setResData(apiResData);
       setFilteredRestaurants(apiResData);
+      console.log(apiResData)
     }
     catch (error)
     {
@@ -60,8 +26,8 @@ const Main = () => {
 
   useEffect(() => { fetchResData() }, [])
 
-  const filterRestaurantsByRating = (filterByStars) => {
-    switch (filterByStars)
+  const filterRestaurantsByRating = (filterByStarNumber) => {
+    switch (filterByStarNumber)
     {
       case 5:
         filterRestaurants(5);
@@ -83,9 +49,22 @@ const Main = () => {
     star === 0 ? setFilteredRestaurants(resData) : setFilteredRestaurants(filteredItems);
   }
 
+  const handleSearchedRestaurants = (searchText) => {
+    if (searchText.trim() === '')
+    {
+      setFilteredRestaurants(resData);
+    } else
+    {
+      const filteredItems = resData.filter((res) =>
+        res?.info?.name?.toLowerCase()?.includes(searchText?.toLowerCase())
+      );
+      setFilteredRestaurants(filteredItems);
+    }
+  }
+
   return (
     <>
-      <SearchBar />
+      <SearchBar onSearch={handleSearchedRestaurants} />
       <FilterButtons filterByStars={filterRestaurantsByRating} />
       <Restaurant restaurants={filteredRestaurants} />
 
