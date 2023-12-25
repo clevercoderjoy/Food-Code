@@ -1,23 +1,23 @@
 {
-  "hash": "33e7d801",
-  "browserHash": "54ae5c6d",
+  "hash": "8311aeaf",
+  "browserHash": "da0b6113",
   "optimized": {
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "0272abd6",
+      "fileHash": "fcc60359",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "a2c5b7e9",
+      "fileHash": "299a6c70",
       "needsInterop": true
     },
     "react-shimmer-effects": {
       "src": "../../node_modules/react-shimmer-effects/dist/index.es.js",
       "file": "react-shimmer-effects.js",
-      "fileHash": "6402aae2",
+      "fileHash": "53328e7c",
       "needsInterop": false
     }
   },

@@ -1,6 +1,10 @@
 import "./footer.css";
 
-const Footer = () => {
+const Footer = ({ changeButtonState, btnState }) => {
+  const handleButtonClick = () => {
+    console.log("btnState", btnState)
+    changeButtonState();
+  }
   return (
     <>
       <footer className="footerContainer">
@@ -20,7 +24,9 @@ const Footer = () => {
               <li>Home</li>
               <li>About</li>
               <li>Cart</li>
-              <li>You</li>
+              <li onClick={handleButtonClick}>
+                <button className={btnState.class}>{btnState.btnTxt}</button>
+              </li>
             </ul>
           </nav>
         </div>
