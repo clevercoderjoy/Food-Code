@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./header.css";
 
 const Header = ({ changeButtonState, btnState }) => {
@@ -13,9 +14,21 @@ const Header = ({ changeButtonState, btnState }) => {
         <div className="navbar">
           <nav>
             <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Cart</li>
+              <li>
+                <Link to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/cart">
+                  Cart
+                </Link>
+              </li>
               <li onClick={handleButtonClick}>
                 <button className={btnState.class}>{btnState.btnTxt}</button>
               </li>
