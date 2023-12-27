@@ -1,9 +1,9 @@
 import RestaurantCard from "../restaurantCard/RestaurantCard";
 import Shimmer from "../shimmer/shimmer";
-import "./restaurant.css";
+import "./restaurantMapper.css";
 
 
-const Restaurant = ({ restaurants }) => {
+const RestaurantMapper = ({ restaurants }) => {
   const shimmerCardCount = Array.from({ length: 10 }, () => "");
   return (
     <>
@@ -17,4 +17,4 @@ const Restaurant = ({ restaurants }) => {
   );
 }
 
-export default Restaurant;
+export default RestaurantMapper;

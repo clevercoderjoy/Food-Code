@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
+import FilterButtons from '../../components/filterButtons/FilterButtons';
+import RestaurantMapper from '../../components/restaurantMapper/RestaurantMapper';
+import SearchBar from '../../components/searchBar/SearchBar';
 import { res_url } from "../../utils/constants";
-import FilterButtons from '../filterButtons/FilterButtons';
-import Restaurant from '../restaurant/Restaurant';
-import SearchBar from '../searchBar/SearchBar';
 
-const Main = () => {
+const Home = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState();
   const [resData, setResData] = useState();
 
@@ -66,10 +66,9 @@ const Main = () => {
     <>
       <SearchBar onSearch={handleSearchedRestaurants} />
       <FilterButtons filterByStars={filterRestaurantsByRating} />
-      <Restaurant restaurants={filteredRestaurants} />
-
+      <RestaurantMapper restaurants={filteredRestaurants} />
     </>
   )
 }
 
-export default Main;
+export default Home;

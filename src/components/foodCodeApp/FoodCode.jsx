@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import Home from '../../pages/home/Home';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
-import Main from '../main/Main';
 
 
 const FoodCode = () => {
@@ -21,7 +21,7 @@ const FoodCode = () => {
   return (
     <div className="foodCode">
       <Header changeButtonState={handleButtonClick} btnState={btnState} />
-      <Main />
+      <Home />
       <Footer changeButtonState={handleButtonClick} btnState={btnState} />
     </div>
   );
