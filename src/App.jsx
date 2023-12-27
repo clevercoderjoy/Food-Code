@@ -1,4 +1,4 @@
-import FoodCode from "./components/foodCodeApp/FoodCode"
+import FoodCode from "./components/foodCodeApp/FoodCode";
 
 function App() {
 
