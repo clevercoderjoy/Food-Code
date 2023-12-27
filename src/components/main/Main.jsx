@@ -12,8 +12,8 @@ const Main = () => {
     try
     {
       const response = await fetch(res_url);
-      const data = await response.json()
-      const apiResData = data?.data?.cards[2]?.card.card?.gridElements?.infoWithStyle?.restaurants;
+      const data = await response.json();
+      const apiResData = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       setResData(apiResData);
       setFilteredRestaurants(apiResData);
       console.log(apiResData)
