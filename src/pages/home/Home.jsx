@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import FilterButtons from '../../components/filterButtons/FilterButtons';
-import RestaurantMapper from '../../components/restaurantMapper/RestaurantMapper';
 import SearchBar from '../../components/searchBar/SearchBar';
+import RestaurantMapper from '../../services/restaurantMapper/RestaurantMapper';
 import { res_url } from "../../utils/constants";
 
 const Home = () => {

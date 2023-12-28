@@ -1,5 +1,5 @@
 import { ShimmerButton, ShimmerText, ShimmerThumbnail, ShimmerTitle } from "react-shimmer-effects";
-import "./shimmer.css";
+import "./shimmerHome.css";
 
 
 const Shimmer = () => {
