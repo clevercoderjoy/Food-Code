@@ -16,7 +16,6 @@ const Home = () => {
       const apiResData = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       setResData(apiResData);
       setFilteredRestaurants(apiResData);
-      console.log(apiResData)
     }
     catch (error)
     {

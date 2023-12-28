@@ -4,8 +4,8 @@ export const CDN_URL =
 export const res_url =
   "https://run.mocky.io/v3/06e51ccb-a4d9-4e49-bc89-a41b427110ce";
 
-export const menu_url = {
-  319086: "https://run.mocky.io/v3/651c3f37-f985-4aff-a970-5b34d19b4b09",
+export const menu_urls = {
+  319086: "https://run.mocky.io/v3/724b534c-34ef-4fcc-8120-1904706ed9a7",
   19563: "https://run.mocky.io/v3/fe8cf0f9-813d-4935-985a-a8844970c7fb",
   757: "https://run.mocky.io/v3/48130492-b989-492c-b03f-e0561df6d739",
   65797: "https://run.mocky.io/v3/281f5776-e08c-40c9-a4f3-4a7bab49e8f0",

@@ -1,6 +1,10 @@
+import { useParams } from 'react-router-dom';
 import "./foodCard.css";
 
-const FoodCard = () => {
+const FoodCard = ({ menu }) => {
+  const { resId } = useParams();
+  // console.log(resId);
+  // console.log(menu?.data?.cards[0]?.card?.card?.info?.id);
   return (
     <>
       <h1>food card component</h1>
@@ -13,6 +17,8 @@ const FoodCard = () => {
           <span>food img</span>
           <span>- food item count +</span>
         </span>
+        <br />
+        {menu?.data?.cards[0]?.card?.card?.info?.id}
       </div>
     </>
   )

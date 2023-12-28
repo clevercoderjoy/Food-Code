@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CDN_URL } from "../../utils/constants";
 import "./restaurantCard.css";
 
@@ -46,9 +47,9 @@ const RestaurantCard = ({ restaurant }) => {
           </div>
         </div>
         <button className="view">
-          <a href="/">
+          <Link to={`/restaurants/${restaurant?.info?.id}`}>
             Quick View
-          </a>
+          </Link>
         </button>
       </div >
     </>

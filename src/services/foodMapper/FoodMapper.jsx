@@ -1,10 +1,11 @@
+import FoodCard from "../../components/foodCard/FoodCard";
 import "./foodMapper.css";
 
-const FoodMapper = () => {
+const FoodMapper = ({menu}) => {
   return (
-    <h1>
-      Food Mapper
-    </h1>
+    <>
+      <FoodCard />
+    </>
   );
 }
 
