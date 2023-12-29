@@ -8,23 +8,22 @@ const RestaurantMenu = () => {
   const [restaurantMenu, setRestaurantMenu] = useState();
   const { resId } = useParams();
 
-  const fetchFoodData = async () => {
-    try
-    {
-      const response = await fetch(menu_urls[resId]);
-      const data = await response.json();
-      console.log(data);
-      setRestaurantMenu(data);
-    }
-    catch (error)
-    {
-      console.log("Error: ", error);
-    }
-  }
-
   useEffect(() => {
+    const fetchFoodData = async () => {
+      try
+      {
+        const response = await fetch(menu_urls[resId]);
+        const data = await response.json();
+        setRestaurantMenu(data);
+      }
+      catch (error)
+      {
+        console.log("Error: ", error);
+      }
+    }
     fetchFoodData();
-  }, []);
+  }, [resId]);
+
   return (
     <FoodMapper menu={restaurantMenu} />
   );

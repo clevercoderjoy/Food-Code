@@ -5,7 +5,7 @@ export const res_url =
   "https://run.mocky.io/v3/06e51ccb-a4d9-4e49-bc89-a41b427110ce";
 
 export const menu_urls = {
-  319086: "https://run.mocky.io/v3/724b534c-34ef-4fcc-8120-1904706ed9a7",
+  319086: "https://run.mocky.io/v3/2825c11c-b106-40cf-94ce-5ed126356795",
   19563: "https://run.mocky.io/v3/fe8cf0f9-813d-4935-985a-a8844970c7fb",
   757: "https://run.mocky.io/v3/48130492-b989-492c-b03f-e0561df6d739",
   65797: "https://run.mocky.io/v3/281f5776-e08c-40c9-a4f3-4a7bab49e8f0",

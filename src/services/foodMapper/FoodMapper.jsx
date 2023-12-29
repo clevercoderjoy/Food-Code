@@ -1,10 +1,12 @@
 import FoodCard from "../../components/foodCard/FoodCard";
+import ShimmerMenu from './../../components/shimmer/shimmerMenu/ShimmerMenu';
 import "./foodMapper.css";
 
-const FoodMapper = ({menu}) => {
+const FoodMapper = ({ menu }) => {
+
   return (
     <>
-      <FoodCard />
+      {menu ? (<FoodCard foodItems={menu} />) : (<ShimmerMenu />)}
     </>
   );
 }
