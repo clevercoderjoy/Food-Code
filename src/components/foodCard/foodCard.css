@@ -72,6 +72,7 @@
   font-size: 20px;
   font-weight: bold;
   border-bottom: 2px solid black;
+  margin: 0.5rem;
 }
 
 .offerCarousels {
@@ -99,5 +100,149 @@
   width: auto;
   height: 3rem;
   text-align: center;
-  transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.menuItems {
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 0.7rem auto 0.1rem auto;
+  padding: 0.3rem;
+}
+
+.categorizedItems {
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 0.4rem auto 0 auto;
+  padding: 0.3rem;
+}
+
+.categoryTitle {
+  border-radius: 3px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  border-radius: 0;
+  margin: 0.5rem auto 0.5rem auto;
+  padding: 0.3rem;
+}
+
+.foodItem {
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 0.5rem auto 0.1rem auto;
+  padding: 0.3rem;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.foodDetails {
+  width: 80%;
+  padding: 0.1rem;
+  margin: 0.5rem auto;
+}
+
+.isVeg_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foodPrice {
+  font-size: 20px;
+  text-align: center;
+}
+
+.foodIsVeg {
+  margin: 0.5rem 0.5rem;
+}
+
+.foodIsVeg img {
+  height: 30px;
+  width: 30px;
+}
+.foodName {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.foodDescription {
+  font-size: 14px;
+}
+
+.foodImgContainer {
+  margin: 0.5rem auto;
+}
+
+.foodImg {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.add {
+  text-align: center;
+  display: block;
+  margin: 1rem auto;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 3px;
+  letter-spacing: 0.1rem;
+  transition: all 0.1s ease-in-out;
+}
+.add:hover {
+  text-transform: uppercase;
+}
+
+.added {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem auto;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.3rem;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 2px solid black;
+  transition: all 0.1s ease-in-out;
+}
+.added:hover button {
+  background: black;
+  color: white;
+}
+.added:hover {
+  background: black;
+  color: white;
+}
+
+.minus {
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  letter-spacing: 0.1rem;
+  transition: all 0.1s ease-in-out;
+  font-size: 16px;
+  border: 0;
+  padding: 0 0.5rem;
+  background: transparent;
+}
+
+.plus {
+  cursor: pointer;
+  padding: 0 0.5rem;
+  font-weight: bold;
+  border-radius: 3px;
+  letter-spacing: 0.1rem;
+  transition: all 0.1s ease-in-out;
+  font-size: 16px;
+  border: 0;
+  text-align: center;
+  background: transparent;
 }

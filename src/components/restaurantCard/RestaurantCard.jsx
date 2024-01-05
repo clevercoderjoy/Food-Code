@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { CDN_URL } from "../../utils/constants";
+import { CDN_URL, dots } from "../../utils/constants";
 import "./restaurantCard.css";
 
 const RestaurantCard = ({ restaurant }) => {
 
   const { cloudinaryImageId, cuisines, name, avgRating, sla: { deliveryTime }, costForTwo, aggregatedDiscountInfoV3 } = restaurant.info;
-  const dots = "...";
   const cuisinesWithDots = () => {
     let cuisine = "";
     for (let i = 0; i < 2; i++)

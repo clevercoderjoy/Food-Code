@@ -22,3 +22,8 @@ export const menu_urls = {
   337335: "https://run.mocky.io/v3/01c1efa1-04b1-4941-a805-adaddbceac37",
   495055: "https://run.mocky.io/v3/eb2817f9-0c96-4d17-83b3-d68b56b40bea",
 };
+
+export const food_img_url =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
+
+export const dots = "...";
