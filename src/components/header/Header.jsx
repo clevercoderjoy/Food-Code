@@ -10,7 +10,7 @@ const Header = ({ changeButtonState, btnState }) => {
   return (
     <>
       <header className="headerContainer">
-        <div className="logo">FoOd CoDe</div>
+        <Link className="logo" to="/">FoOd CoDe</Link>
         <div className="navbar">
           <nav>
             <ul>

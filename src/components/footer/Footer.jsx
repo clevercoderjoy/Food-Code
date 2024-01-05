@@ -9,10 +9,10 @@ const Footer = ({ changeButtonState, btnState }) => {
   return (
     <>
       <footer className="footerContainer">
-        <div className="footerLogo">
-          <span>FoOd</span>
-          <span>CoDe</span>
-        </div>
+        <Link className="footerLogo" to="/">
+          <span className="food">FoOd</span>
+          <span className="code">CoDe</span>
+        </Link>
         <div className="copyright">
           <span>built by </span>
           <span>

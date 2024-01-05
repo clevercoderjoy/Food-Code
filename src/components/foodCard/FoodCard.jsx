@@ -76,12 +76,12 @@ const FoodCard = ({ foodItems }) => {
                                   imageId ? (food_img_url + imageId) : "https://www.pngkey.com/png/full/114-1144514_foodlogo-question-mark-food-question-mark-png.png"
                                 } alt="food image" />
                               </div>
-                              {/* <button className="add">Add</button> */}
-                              <div className="added">
+                              <button className="add">Add</button>
+                              {/* <div className="added">
                                 <button className="minus">-</button>
                                 <div className="count">1</div>
                                 <button className="plus">+</button>
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         );
