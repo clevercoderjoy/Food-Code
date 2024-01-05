@@ -50,9 +50,9 @@
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
-.footerNavBar ul li a{
+.footerNavBar ul li a {
   text-decoration: none;
-  color: inherit
+  color: inherit;
 }
 .footerNavBar ul li:hover {
   transform: scale(1.1);
