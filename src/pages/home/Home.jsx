@@ -2,28 +2,16 @@ import { useEffect, useState } from 'react';
 import FilterButtons from '../../components/filterButtons/FilterButtons';
 import SearchBar from '../../components/searchBar/SearchBar';
 import RestaurantMapper from '../../services/restaurantMapper/RestaurantMapper';
-import { res_url } from "../../utils/constants";
+import useRestaurantData from '../../utils/useRestaurantData';
 
 const Home = () => {
-  const [filteredRestaurants, setFilteredRestaurants] = useState();
-  const [resData, setResData] = useState();
 
-  const fetchResData = async () => {
-    try
-    {
-      const response = await fetch(res_url);
-      const data = await response.json();
-      const apiResData = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-      setResData(apiResData);
-      setFilteredRestaurants(apiResData);
-    }
-    catch (error)
-    {
-      console.log("Error: ", error);
-    }
-  };
+  const resData = useRestaurantData();
+  const [filteredRestaurants, setFilteredRestaurants] = useState(useRestaurantData());
 
-  useEffect(() => { fetchResData() }, [])
+  useEffect(() => {
+    setFilteredRestaurants(resData);
+  }, [resData]);
 
   const filterRestaurantsByRating = (filterByStarNumber) => {
     switch (filterByStarNumber)
