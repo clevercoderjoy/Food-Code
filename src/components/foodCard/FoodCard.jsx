@@ -4,7 +4,6 @@ import { dots, food_img_url } from "../../utils/constants";
 import "./foodCard.css";
 
 const FoodCard = ({ foodItems }) => {
-  console.log(foodItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   const menuItems = foodItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
   return (
     <>
