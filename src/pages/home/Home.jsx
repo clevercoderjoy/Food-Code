@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import FilterButtons from '../../components/filterButtons/FilterButtons';
 import SearchBar from '../../components/searchBar/SearchBar';
 import RestaurantMapper from '../../services/restaurantMapper/RestaurantMapper';
+import useOnlineStatus from '../../utils/useOnlineStatus';
 import useRestaurantData from '../../utils/useRestaurantData';
 
 const Home = () => {
@@ -12,6 +13,22 @@ const Home = () => {
   useEffect(() => {
     setFilteredRestaurants(resData);
   }, [resData]);
+
+  const onlineStatus = useOnlineStatus();
+
+  if (!onlineStatus)
+  {
+    return (
+      <>
+        <h1 style={{ textAlign: "center", margin: "1rem", padding: "1rem" }}>
+          Looks like you are offline!!!
+        </h1>
+        <h2 style={{ textAlign: "center", margin: "1rem", padding: "1rem" }}>
+          Please check your internet connection.
+        </h2>
+      </>
+    )
+  }
 
   const filterRestaurantsByRating = (filterByStarNumber) => {
     switch (filterByStarNumber)
