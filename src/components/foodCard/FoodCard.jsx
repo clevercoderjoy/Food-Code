@@ -1,12 +1,15 @@
 import nonVegIcon from "../../../public/images/nonVegIcon.svg";
 import vegIcon from "../../../public/images/vegIcon.svg";
 import { dots, food_img_url } from "../../utils/constants";
+import DataConnectivityStatus from "../dataConnectivityStatus/DataConnectivityStatus";
 import "./foodCard.css";
 
 const FoodCard = ({ foodItems }) => {
   const menuItems = foodItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+
   return (
     <>
+      <DataConnectivityStatus />
       <div className="menuContainer">
         <div className="resDetails">
           <div className="resInfo">
@@ -38,7 +41,7 @@ const FoodCard = ({ foodItems }) => {
           <div className="offerHeader">Special Offers Available For You</div>
           <div className="offerCarousels">
             {
-              foodItems?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers?.map((offer) => <div className="offerCarousel" key={offer?.resId}>{offer?.info?.header}</div>)
+              foodItems?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers?.map((offer, index) => <div className="offerCarousel" key={index}>{offer?.info?.header}</div>)
             }
           </div>
         </div>
