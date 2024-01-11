@@ -20,7 +20,7 @@ const useRestaurantMenu = () => {
       }
     }
     fetchFoodData();
-  }, [resId, restaurantMenu])
+  }, [resId])
 
   return restaurantMenu;
 
