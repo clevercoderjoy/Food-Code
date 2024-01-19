@@ -1,6 +1,7 @@
-import "./filterButtons.css";
-
 const FilterButtons = ({ filterByStars }) => {
+
+  const btnClass = "btn hover:uppercase hover:scale-110 text-center cursor-pointer font-bold p-2 rounded-[3px] border-black border-[2px] my-0 mx-4 tracking-widest transition-all duration-100 ease-in-out";
+
   const handleFilterButtonClick = (e) => {
     const stars = e.target.textContent;
     switch (stars.toLowerCase())
@@ -21,11 +22,11 @@ const FilterButtons = ({ filterByStars }) => {
   }
   return (
     <>
-      <div className="filterButtonContainer">
-        <button className="btn" onClick={handleFilterButtonClick}>5 Stars</button>
-        <button className="btn" onClick={handleFilterButtonClick}>4 Stars</button>
-        <button className="btn" onClick={handleFilterButtonClick}>3 Stars</button>
-        <button className="btn" onClick={handleFilterButtonClick}>Reset</button>
+      <div className="filterButtonContainer text-center mt-8 mx-auto mb-4">
+        <button className={btnClass} onClick={handleFilterButtonClick}>5 Stars</button>
+        <button className={btnClass} onClick={handleFilterButtonClick}>4 Stars</button>
+        <button className={btnClass} onClick={handleFilterButtonClick}>3 Stars</button>
+        <button className={btnClass} onClick={handleFilterButtonClick}>Reset</button>
       </div>
     </>
   )
