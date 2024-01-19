@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
 
-  const authButtonClass = "loginButton text-center block border-none text-white font-bold py-[0.1rem] px-[0.2rem] transition-all duration-[100] ease-in-out rounded-[3px] uppercase tracking-widest";
+  const authButtonClass = "loginButton text-center block border-black border-2 text-white font-bold py-[0.1rem] px-[0.2rem] transition-all duration-100 ease-in-out rounded-[3px] uppercase tracking-widest";
 
   const listStyle = "inline-block text-xl p-2 cursor-pointer transition-all duration-110 ease-in-out hover:font-bold hover:scale-[1.1] m-auto";
 
@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="headerContainer flex items-center justify-between m-[0.3rem] border-2 border-black rounded-[3px]">
+      <header className="headerContainer relative flex items-center justify-between m-[0.3rem] border-2 border-black rounded-[3px]">
         <Link className="logo text-3xl font-bold my-0 mx-[0.2rem] no-underline cursor-pointer text-black" to="/">FoOd CoDe</Link>
         <div className="navbar flex justify-between items-center">
           <nav className="">
@@ -43,7 +43,7 @@ const Header = () => {
                   Cart
                 </Link>
               </li>
-              <li className={`${listStyle}`} onClick={handleButtonClick}>
+              <li className={listStyle} onClick={handleButtonClick}>
                 <button className={btnState.class}>{btnState.btnTxt}</button>
               </li>
             </ul>
