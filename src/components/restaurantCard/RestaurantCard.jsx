@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { CDN_URL, dots } from "../../utils/constants";
-import "./restaurantCard.css";
 
 const RestaurantCard = ({ restaurant }) => {
 
@@ -18,26 +17,26 @@ const RestaurantCard = ({ restaurant }) => {
   )
   return (
     <>
-      <div className="restaurantContainer">
-        <div className="restaurantImgContainer">
-          <img src={CDN_URL + cloudinaryImageId} alt="food-image" className="restaurantImg" />
+      <div className="restaurantContainer w-[230px] h-[375px] mt-4 mx-2 mb-[1.5rem] rounded-[10px] border-2 border-black transition-all duration-100 ease-in-out relative hover:scale-[1.1]">
+        <div className="restaurantImgContainer m-auto text-center p-2">
+          <img src={CDN_URL + cloudinaryImageId} alt="food-image" className="restaurantImg w-[100%] object-cover h-[150px] rounded-[10px]" />
         </div>
-        <div className="restaurantDetailsContainer">
-          <div className="restaurantName">
+        <div className="restaurantDetailsContainer my-1 mx-2 border-t-2 border-black">
+          <div className="restaurantName text-[25px] font-bold">
             {name.length > 10 ? (`${name.substring(0, 10)}${dots}`) : (name)}
           </div>
 
-          <div className="restaurantFoodDetails">
+          <div className="restaurantFoodDetails flex justify-between items-center text-xs m-[0.3rem]">
             <span className="ratings">{avgRating}⭐</span>
-            <span className="separator">|</span>
+            <span className="separator font-bold">|</span>
             <span className="time">{deliveryTime} mins</span>
-            <span className="separator">|</span>
+            <span className="separator font-bold">|</span>
             <span className="avgPrice">{costForTwo}</span>
           </div>
-          <div className="restaurantCuisines">
+          <div className="restaurantCuisines text-left px-1">
             <span>{cuisine}</span>
           </div>
-          <div className="offers">
+          <div className="offers my-2 mx-0 rounded-[3px] font-bold text-base flex items-center justify-center">
             {
               (aggregatedDiscountInfoV3?.header === undefined && aggregatedDiscountInfoV3?.subHeader === undefined)
                 ? "Offers Coming Soon"
@@ -45,7 +44,7 @@ const RestaurantCard = ({ restaurant }) => {
             }
           </div>
         </div>
-        <button className="view">
+        <button className="view text-center block cursor-pointer font-bold p-2 text-sm rounded-[3px] tracking-[0.1rem] border-black border-2 transition-all duration-100 ease-in-out absolute bottom-[5px] left-[50px] hover:uppercase">
           <Link to={`/restaurants/${restaurant?.info?.id}`}>
             Quick View
           </Link>

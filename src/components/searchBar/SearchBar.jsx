@@ -1,7 +1,5 @@
 import Input from "../input/Input";
 
-import "./searchBar.css";
-
 const SearchBar = ({ onSearch }) => {
 
   const handleSearchInputChange = (e) => {
@@ -11,8 +9,8 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <>
-      <div className="searchBarContainer">
-        <Input placeholderText="Search..." onChange={(e) => handleSearchInputChange(e)} />
+      <div className="searchBarContainer mt-6 mx-auto mb-2 text-center">
+        <Input placeholderText="Search...🔍" onChange={(e) => handleSearchInputChange(e)} />
       </div>
     </>
   )
