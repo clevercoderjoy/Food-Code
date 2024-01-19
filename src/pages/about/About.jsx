@@ -3,7 +3,7 @@ import clevercoderjoy from "../../../public/images/clevercoderjoy.jpg";
 const About = () => {
   return (
     <>
-      <div className="aboutContainer m-4">
+      <div className="aboutContainer my-4 mx-[0.3rem]">
         <div className="imgContainer">
           <img className=" transition-all duration-200 ease-in-out h-[250px] w-[250px] m-auto rounded-[100%] border-black border-4 hover:scale-110" src={clevercoderjoy} alt="clevercoderjoy" />
           <caption className="imgCaption block text-center mx-auto my-2 text-4xl text-[tomato] font-bold">
