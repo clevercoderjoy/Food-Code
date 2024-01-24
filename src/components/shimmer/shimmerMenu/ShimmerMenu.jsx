@@ -3,7 +3,7 @@ const ShimmerMenu = () => {
 
   const shimmerMenuItems = (
     <div className="shimmerMenuItems flex items-center justify-between mt-6">
-      <div className="shimmerMenuItemLeft">
+      <div className="shimmerMenuItemLeft pr-4">
         <div className="shimmerMenuItemTitle">
           <div className="shimmerHeaderTitle w-[75%] bg-[#e6e6e6] h-[25px] rounded-[5px] animate-pulse"></div>
         </div>
