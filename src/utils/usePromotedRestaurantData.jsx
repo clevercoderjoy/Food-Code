@@ -1,9 +1,27 @@
 const usePromotedRestaurantData = (restaurantData) => {
+  const uniqueRandomNumbers = new Set();
 
-  // a function to get 6 random numbers
-  // map over restaurant data and put a new key value pair as promoted and boolean if index matches the generated numbers.
-  // return that new restaurant data
+  const getRandomNumbers = () => {
+    while (uniqueRandomNumbers.size < 6)
+    {
+      const randomNumber = Math.floor((Math.random() * 6 - 0 + 1));
+      uniqueRandomNumbers.add(randomNumber);
+    }
+    return Array.from(uniqueRandomNumbers);
+  }
+  const randomRestaurantIndex = getRandomNumbers();
 
+  const updatedRestaurantData = restaurantData?.map((restaurant, index) => {
+    const isPromoted = randomRestaurantIndex.includes(index);
+    return {
+      ...restaurant,
+      info: {
+        ...restaurant.info,
+        promoted: isPromoted
+      }
+    }
+  })
+  return updatedRestaurantData;
 }
 
 export default usePromotedRestaurantData;

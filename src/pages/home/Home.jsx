@@ -8,7 +8,7 @@ import useRestaurantData from '../../utils/useRestaurantData';
 const Home = () => {
 
   const resData = useRestaurantData();
-  const [filteredRestaurants, setFilteredRestaurants] = useState(useRestaurantData());
+  const [filteredRestaurants, setFilteredRestaurants] = useState(resData);
 
   useEffect(() => {
     setFilteredRestaurants(resData);

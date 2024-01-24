@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useState } from "react";
 import { res_url } from "./constants";
 import usePromotedRestaurantData from "./usePromotedRestaurantData";
@@ -17,7 +18,7 @@ const useRestaurantData = () => {
       const data = await response.json();
       const restaurantData = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       const promotedRestaurantData = usePromotedRestaurantData(restaurantData);
-      setResData(restaurantData);
+      setResData(promotedRestaurantData);
     }
     catch (error)
     {

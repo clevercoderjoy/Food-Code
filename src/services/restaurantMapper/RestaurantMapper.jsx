@@ -3,7 +3,6 @@ import RestaurantCard from './../../components/restaurantCard/RestaurantCard';
 
 const RestaurantMapper = ({ restaurants }) => {
   const shimmerCardCount = Array.from({ length: 10 }, () => "");
-  console.log(restaurants)
   return (
     <>
       <div className="restaurantCards flex flex-wrap items-center justify-center">
