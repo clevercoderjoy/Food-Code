@@ -3,7 +3,7 @@ import { CDN_URL, dots } from "../../utils/constants";
 
 const RestaurantCard = ({ restaurant }) => {
 
-  const { cloudinaryImageId, cuisines, name, avgRating, sla: { deliveryTime }, costForTwo, aggregatedDiscountInfoV3 } = restaurant.info;
+  const { cloudinaryImageId, cuisines, name, avgRating, promoted, sla: { deliveryTime }, costForTwo, aggregatedDiscountInfoV3 } = restaurant.info;
   const cuisinesWithDots = () => {
     let cuisine = "";
     for (let i = 0; i < 2; i++)
@@ -18,6 +18,11 @@ const RestaurantCard = ({ restaurant }) => {
   return (
     <>
       <div className="restaurantContainer w-[230px] h-[375px] mt-4 mx-2 mb-[1.5rem] rounded-[10px] border-2 border-black transition-all duration-100 ease-in-out relative hover:scale-[1.1]">
+        {promoted ?
+          <label className="absolute z-10 font-bold top-[0px] left-[0px] border-black rounded-tl-[8px] bg-black text-white py-1 px-2">Promoted</label>
+          :
+          ""
+        }
         <div className="restaurantImgContainer m-auto text-center p-2">
           <img src={CDN_URL + cloudinaryImageId} alt="food-image" className="restaurantImg w-[100%] object-cover h-[150px] rounded-[10px]" />
         </div>
