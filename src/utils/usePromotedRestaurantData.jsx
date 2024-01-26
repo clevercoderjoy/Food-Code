@@ -12,7 +12,6 @@ const usePromotedRestaurantData = (restaurantData) => {
     return Array.from(uniqueRandomNumbers);
   }
   const randomRestaurantIndex = getRandomNumbers();
-  console.log(randomRestaurantIndex)
 
   const updatedRestaurantData = restaurantData?.map((restaurant, index) => {
     const isPromoted = randomRestaurantIndex.includes(index);
