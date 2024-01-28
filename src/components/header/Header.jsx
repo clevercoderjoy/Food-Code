@@ -1,25 +1,43 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../main";
 
 const Header = () => {
 
-  const authButtonClass = "loginButton text-center block border-black border-2 text-white font-bold py-[0.1rem] px-[0.2rem] transition-all duration-100 ease-in-out rounded-[3px] uppercase tracking-widest";
+  const userData = useContext(UserContext);
+  const [isOptionsVisible, setOptionsVisible] = useState(false);
+  const showOptions = isOptionsVisible ? "visible" : "hidden";
+
+  const authButtonClass = "loginButton text-center block border-black border-2 text-white font-bold py-[0.1rem] pl-[0.3rem] pr-[0.3rem] mr-1 transition-all duration-500 ease-in-out rounded-[3px] tracking-widest w-28 h-9";
 
   const listStyle = "inline-block text-xl p-2 cursor-pointer transition-all duration-110 ease-in-out hover:font-bold hover:scale-[1.1] m-auto";
 
-  const [btnState, setBtnState] = useState({ class: `bg-[#0f9d58] ${authButtonClass}`, btnTxt: "Login" });
+  const autOptionClass = `flex hover:uppercase font-bold inline-block py-[0.5rem] border-black px-1 cursor-pointer transition-all duration-100 ease-in-out text-left group-hover:block`
+
+  const [btnState, setBtnState] = useState({ class: `bg-[tomato] ${authButtonClass}`, btnTxt: "LoggedOut" });
 
   const handleButtonClick = () => {
     switch (btnState.btnTxt)
     {
-      case "Login":
-        setBtnState(btnState => ({ ...btnState, btnTxt: "Logout", class: `bg-[tomato] ${authButtonClass}` }));
+      case "LoggedIn":
+        setBtnState(btnState => ({ ...btnState, btnTxt: "LoggedOut", class: `bg-[tomato] ${authButtonClass}` }));
         break;
-      case "Logout":
-        setBtnState(btnState => ({ ...btnState, btnTxt: "Login", class: `bg-[#0f9d58] ${authButtonClass}` }));
+      case "LoggedOut":
+        setBtnState(btnState => ({ ...btnState, btnTxt: "LoggedIn", class: `bg-[#0f9d58] ${authButtonClass}` }));
         break;
     }
   }
+
+  const handleAuthHover = () => {
+    if (btnState.btnTxt === "LoggedIn")
+    {
+      setOptionsVisible(true);
+    }
+  };
+
+  const handleAuthLeave = () => {
+    setOptionsVisible(false);
+  };
 
   return (
     <>
@@ -43,11 +61,18 @@ const Header = () => {
                   Cart
                 </Link>
               </li>
-              <li className={listStyle} onClick={handleButtonClick}>
-                <button className={btnState.class}>{btnState.btnTxt}</button>
-              </li>
             </ul>
           </nav>
+          <div className="auth group relative" onMouseOver={handleAuthHover}>
+            <div className="authButton">
+              <button className={`${btnState.class}`} onClick={handleButtonClick}>{btnState.btnTxt}</button>
+            </div>
+            <div className={`${showOptions} authOptions border-t-0 h-auto py-1 pl-1 absolute top-[40px] w-52 right-[-2px] bg-white border-black border-2 shadow-lg transition-all duration-200 ease-in-out`} onMouseLeave={handleAuthLeave}>
+              <span className={`autoOption ${autOptionClass}`}>{userData.userName}</span>
+              <span className={`autoOption ${autOptionClass}`}>My Account</span>
+              <span className={`autoOption ${autOptionClass}`}>Log Out</span>
+            </div>
+          </div>
         </div>
       </header>
     </>

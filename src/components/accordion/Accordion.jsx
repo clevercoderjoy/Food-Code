@@ -1,13 +1,16 @@
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Accordion = ({ title, content }) => {
+const Accordion = ({ title, content, isOpen, onToggle }) => {
 
   const [accordionOpen, setAccordionOpen] = useState(false);
 
   const toggleAccordion = () => {
     setAccordionOpen(!accordionOpen);
+    onToggle();
   }
+
+  useEffect(() => { setAccordionOpen(isOpen) }, [isOpen])
 
   return (
     <div className="accordion-box py-2">
