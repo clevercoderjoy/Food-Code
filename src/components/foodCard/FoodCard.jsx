@@ -4,8 +4,13 @@ import { dots, food_img_url } from "../../utils/constants";
 import Accordion from "../accordion/Accordion";
 import DataConnectivityStatus from "../dataConnectivityStatus/DataConnectivityStatus";
 
-const FoodCard = ({ foodItems }) => {
+const FoodCard = ({ foodItems, accordionOpen, onAccordionToggle }) => {
   const menuItems = foodItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((food) => food?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+
+  const handleAccordionToggle = (index) => {
+    onAccordionToggle(index);
+  }
+
 
   return (
     <>
@@ -91,7 +96,8 @@ const FoodCard = ({ foodItems }) => {
                         })
                       }
                     </div>
-                  } />
+                  } isOpen={index === accordionOpen}
+                    onToggle={() => handleAccordionToggle(index)} />
                 </div>
               </div>
             ))
