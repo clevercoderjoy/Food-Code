@@ -14,7 +14,7 @@ const Accordion = ({ title, content, isOpen, onToggle }) => {
 
   return (
     <div className="accordion-box py-2">
-      <button onClick={toggleAccordion} className="accordion-title-container flex justify-between items-center w-full">
+      <button onClick={toggleAccordion} className="accordion-title-container flex justify-between w-full">
         <span className="title">
           {title}
         </span>

@@ -55,7 +55,7 @@ const FoodCard = ({ foodItems, accordionOpen, onAccordionToggle }) => {
             menuItems?.map((items, index) =>
             (
               <div className="categorizedItems mx-auto mb-0 py-[0.3rem]" key={index}>
-                <div className="categoryTitle flex items-center justify-center flex-col border-2 border-black rounded-[3px] text-center text-[25px] font-bold mx-auto px-[0.3rem]">
+                <div className="categoryTitle flex justify-center flex-col border-2 border-black rounded-[3px] text-center text-[25px] font-bold mx-auto px-[0.3rem]">
 
                   <Accordion title={`${items?.card?.card?.title} (${items?.card?.card?.itemCards?.length})`} content={
                     <div className="categoryItems">
