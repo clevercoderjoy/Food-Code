@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../main";
 
-const Header = () => {
+const Header = ({ cartItems }) => {
 
   const userData = useContext(UserContext);
   const [isOptionsVisible, setOptionsVisible] = useState(false);
@@ -59,6 +59,7 @@ const Header = () => {
               <li className={listStyle}>
                 <Link to="/cart">
                   Cart
+                  {cartItems.length === 0 ? "" : <span className="font-bold ml-1">({cartItems.length})</span>}
                 </Link>
               </li>
             </ul>

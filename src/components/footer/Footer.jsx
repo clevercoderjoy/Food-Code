@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-const Footer = () => {
-  const listStyleClass = "m-[0.3rem] block cursor-pointer transition-all duration-100 ease-in-out hover:scale-[1.1] hover:font-bold";
+const Footer = ({ cartItems }) => {
+  const listStyleClass = "m-[0.3rem] block cursor-pointer transition-all duration-100 ease-in-out hover:scale-[1.1] hover:font-bold text-lg";
   return (
     <>
       <footer className="footerContainer relative flex items-center justify-between mt-6 mx-[0.3rem] mb-[0.3rem] rounded-[3px] border-2 border-black">
@@ -31,6 +31,7 @@ const Footer = () => {
               <li className={listStyleClass}>
                 <Link to="/cart">
                   Cart
+                  {cartItems.length === 0 ? "" : <span className="font-bold ml-1">({cartItems.length})</span>}
                 </Link>
               </li>
             </ul>

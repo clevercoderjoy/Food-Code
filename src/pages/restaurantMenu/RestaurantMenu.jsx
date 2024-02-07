@@ -2,7 +2,7 @@ import FoodMapper from "../../services/foodMapper/FoodMapper";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const restaurantMenu = useRestaurantMenu()
+  const restaurantMenu = useRestaurantMenu();
 
   return (
     <FoodMapper menu={restaurantMenu} />

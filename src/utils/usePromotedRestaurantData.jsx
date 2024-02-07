@@ -18,7 +18,9 @@ const usePromotedRestaurantData = (restaurantData) => {
     return {
       ...restaurant,
       info: {
-        ...restaurant.info,
+        ...restaurant.info, updateItemCount: (state, action) => {
+          state.items = action.payload;
+        },
         promoted: isPromoted
       }
     }
