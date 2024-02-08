@@ -3,8 +3,8 @@ import { createContext, useState } from "react";
 export const RestaurantContext = createContext();
 
 export const RestaurantContextProvider = ({ children }) => {
-  const [restaurantMenuReference, setRestaurantMenuReference] = useState({});
+  const [currentRestaurant, setCurrentRestaurant] = useState({});
   return (
-    <RestaurantContext.Provider value={{ restaurantMenuReference, setRestaurantMenuReference }}>{children}</RestaurantContext.Provider>
+    <RestaurantContext.Provider value={{ currentRestaurant, setCurrentRestaurant }}>{children}</RestaurantContext.Provider>
   )
 }

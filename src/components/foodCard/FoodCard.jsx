@@ -10,11 +10,7 @@ import DataConnectivityStatus from "../dataConnectivityStatus/DataConnectivitySt
 
 const FoodCard = ({ foodItems, accordionOpen, onAccordionToggle }) => {
   const cartItems = useSelector((store) => store.cart.items);
-  const { getItemCount, handleAddClick, currentRestaurant } = useContext(CartContext);
-  // const { restaurantMenuReference, setRestaurantMenuReference } = useContext(RestaurantContext);
-  // useEffect(() => {
-  //   setRestaurantMenuReference(foodItems);
-  // }, [restaurantMenuReference, foodItems, setRestaurantMenuReference])
+  const { getItemCount, handleAddClick} = useContext(CartContext);
 
   const menuItems = foodItems?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((food) => food?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
 
@@ -24,6 +20,7 @@ const FoodCard = ({ foodItems, accordionOpen, onAccordionToggle }) => {
   const isItemInCart = (itemId) => {
     return cartItems.some((item) => item.id === itemId);
   }
+  // console.log("foodItems", foodItems?.data?.cards[0]?.card?.card?.info?.id);
 
   return (
     <>
@@ -103,10 +100,10 @@ const FoodCard = ({ foodItems, accordionOpen, onAccordionToggle }) => {
                                     <div className="added flex items-center justify-between my-4 mx-auto cursor-pointer font-bold p-[0.3rem] text-base rounded-[3px] border-black border-2 transition-all duration-100 ease-in-out hover:bg-black hover:text-white">
                                       <button className="minus tracking-[0.1rem] bg-transparent py-0 px-1">-</button>
                                       <div className="count">{getItemCount(id)}</div>
-                                      <button className="plus tracking-[0.1rem] bg-transparent py-0 px-1" onClick={() => handleAddClick(item, foodItems?.data?.cards[0]?.card?.card?.info?.id)}>+</button>
+                                      <button className="plus tracking-[0.1rem] bg-transparent py-0 px-1" onClick={() => handleAddClick(item, foodItems?.data?.cards[0]?.card?.card?.info?.id, foodItems?.data?.cards[0]?.card?.card?.info?.name)}>+</button>
                                     </div>
                                   ) : (
-                                    <button className="add text-center block my-4 mx-auto cursor-pointer font-bold py-[0.3rem] px-2 text-sm w-[100%] rounded-[3px] tracking-[0.1rem] transition-all duration-100 ease-in-out border-black border-2 hover:uppercase" onClick={() => handleAddClick(item, foodItems?.data?.cards[0]?.card?.card?.info?.id)}>Add</button>
+                                    <button className="add text-center block my-4 mx-auto cursor-pointer font-bold py-[0.3rem] px-2 text-sm w-[100%] rounded-[3px] tracking-[0.1rem] transition-all duration-100 ease-in-out border-black border-2 hover:uppercase" onClick={() => handleAddClick(item, foodItems?.data?.cards[0]?.card?.card?.info?.id, foodItems?.data?.cards[0]?.card?.card?.info?.name)}>Add</button>
                                   )
                                 }
                               </div>
