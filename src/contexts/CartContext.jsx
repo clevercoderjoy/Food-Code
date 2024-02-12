@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addItems, clearCart } from "../services/reduxStore/cartSlice/cartSlice";
@@ -10,9 +10,13 @@ export const CartContextProvider = ({ children }) => {
 
   const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.items);
-  const [selectedRestaurant, setSelectedRestaurant] = useState({ id: 0, name: "" });
-  const { currentRestaurant } = useContext(RestaurantContext);
-  console.log(currentRestaurant?.data?.cards[0]?.card?.card?.info?.id);
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+  const { currentRestaurant, setCurrentRestaurant } = useContext(RestaurantContext);
+
+
+  useEffect(() => {
+    setCurrentRestaurant(selectedRestaurant);
+  }, [selectedRestaurant, setCurrentRestaurant]);
 
   const getItemCount = (itemId) => {
     let itemCount = 0;
@@ -20,14 +24,14 @@ export const CartContextProvider = ({ children }) => {
     return itemCount;
   }
 
-  console.log(selectedRestaurant);
-  const handleAddClick = (item, currResId, currResName) => {
+  const handleAddClick = (item, currRes) => {
     const itemCount = getItemCount(item.card.info.id);
-    if (selectedRestaurant.id === 0)
+    if (selectedRestaurant === null)
     {
-      setSelectedRestaurant({ id: currResId, name: currResName });
+      setSelectedRestaurant(currRes);
+      dispatch(addItems(item.card.info));
     }
-    else if (selectedRestaurant.id === currResId)
+    else if (selectedRestaurant?.data?.cards?.[0]?.card?.card?.info?.id === currRes?.data?.cards?.[0]?.card?.card?.info?.id)
     {
       if (itemCount < 3)
       {
@@ -44,11 +48,11 @@ export const CartContextProvider = ({ children }) => {
     else
     {
       dispatch(clearCart());
-      console.log(cartItems);
-      setSelectedRestaurant(0);
+      setSelectedRestaurant(currRes);
+      dispatch(addItems(item.card.info));
     }
   }
   return (
-    <CartContext.Provider value={{ getItemCount, handleAddClick }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ getItemCount, handleAddClick, currentRestaurant }}>{children}</CartContext.Provider>
   )
 }
