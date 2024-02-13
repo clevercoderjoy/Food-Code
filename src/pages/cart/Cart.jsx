@@ -16,6 +16,12 @@ const Cart = () => {
   const accordionClass = "border-black border-2 my-2 p-[0.3rem] rounded-[3px] text-left";
 
   const cartItems = useSelector((store) => store.cart.items);
+
+  const calculateItemCount = (itemId) => {
+    const uniqueItems = new Set(cartItems.map((item) => item.id));
+    return uniqueItems.has(itemId) ? cartItems.filter((item) => item.id === itemId).length : 0;
+  };
+
   console.log(cartItems)
 
   return (
@@ -27,19 +33,20 @@ const Cart = () => {
             <div className="restaurantName">{currentRestaurant?.data?.cards?.[0]?.card?.card?.info?.name}</div>
             <div className="restaurantLocation">{currentRestaurant?.data?.cards?.[0]?.card?.card?.info?.areaName}</div>
           </div>
-          {
-            cartItems.map((item, index) =>
-            (<div className="cartItemContainer flex justify-between items-center my-2 border-black border-2 py-[0.3rem] px-2 rounded-[3px] text-lg" key={index}>
-              <div className="cartItemName w-[300px] text-left">{item.name}</div>
-              <div className="cartItemQuantityButtons flex gap-6 font-bold border-black border-2 px-4 py-1 rounded-[3px] my-2">
-                <button className="quantityButtons cursor-pointer">-</button>
-                <div className="cartItemQuantity">{2}</div>
-                <button className="quantityButtons cursor-pointer">+</button>
+          {Array.from(new Set(cartItems.map(item => item.id))).map(itemId => {
+            const item = cartItems.find(item => item.id === itemId);
+            return (
+              <div className="cartItemContainer flex justify-between items-center my-2 border-black border-2 py-[0.3rem] px-2 rounded-[3px] text-lg" key={item.id}>
+                <div className="cartItemName w-[300px] text-left">{item.name}</div>
+                <div className="cartItemQuantityButtons flex gap-6 font-bold border-black border-2 px-4 py-1 rounded-[3px] my-2">
+                  <button className="quantityButtons cursor-pointer">-</button>
+                  <div className="cartItemQuantity">{calculateItemCount(item.id)}</div>
+                  <button className="quantityButtons cursor-pointer">+</button>
+                </div>
+                <div className="cartItemPrice font-bold">₹{item.price ? ((calculateItemCount(item.id) * item.price) / 100) : ((calculateItemCount(item.id) * item.defaultPrice) / 100)}</div>
               </div>
-              <div className="cartItemPrice font-bold">₹{item.price / 100}</div>
-            </div>)
-            )
-          }
+            );
+          })}
         </div>
         <div className="accordionContainer">
           <div className={`${accordionClass} offerSelector`}>

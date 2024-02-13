@@ -71,15 +71,16 @@ const FoodCard = ({ foodItems, accordionOpen, onAccordionToggle }) => {
                     <div className="categoryItems">
                       {
                         items?.card?.card?.itemCards?.map((item) => {
-                          const { name, description, imageId, isVeg, price, id, variantsV2 } = item.card.info;
+                          const { name, description, imageId, isVeg, price, id, defaultPrice } = item.card.info;
                           const itemInCart = isItemInCart(id);
+                          console.log(defaultPrice)
                           return (
                             <div className="foodItem border-2 border-black rounded-[3px] mt-2 mx-auto p-[0.3rem] flex items-start justify-between" key={id}>
                               <div className="foodDetails w-[83.5%] p-[0.1rem] my-2 mx-0">
                                 <div className="foodName font-bold text-lg">{name}</div>
                                 <div className="isVeg_price flex justify-between items-center">
                                   <div className="foodPrice text-xl text-center"><span className="currency">₹</span>{
-                                    price ? (price?.toString().substring(0, price?.toString().length - 2)) : (variantsV2?.variantGroups?.[0].variations?.[0]?.price)
+                                    price ? (price?.toString().substring(0, price?.toString().length - 2)) : (defaultPrice.toString().substring(0, defaultPrice?.toString().length - 2))
                                   }</div>
                                   <div className="foodIsVeg m-2">
                                     {
